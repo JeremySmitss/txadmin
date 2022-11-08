@@ -58,24 +58,6 @@ AddEventHandler('txAdmin:events:playerKicked', function(eventData)
 
 end)
 
-msg = ""
-RegisterCommand('staffooc', function(source, args, user)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local playerGroup = xPlayer.getGroup()
-    if playerGroup == 'superadmin'  then
-	    for i,v in pairs(args) do
-	    	msg = msg .. " " .. v
-	    end
-            TriggerClientEvent('chat:addMessage', -1, {
-                template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(65,65,65, 0.6); border-radius: 13px;"><span style="color: rose;">STAFF OOC:  [{0}]</span> <span style="color: white;">{1}</span><span style="color: white;"></span></div>',
-                args = { source, msg }
-            })
-	    msg = ""
-    else
-        print("Geen perms")
-    end
-end)
-
 -- extra comms -- 
 
 -- made by the one and only Pascal --
